@@ -11,8 +11,8 @@ const Additems = ( {setItems, newItem, setNewItem, handleSubmit} ) => {
       ref={inputRef}
       autoFocus
       id = 'addItem'
-      type="text" 
-      placeholder='Add Item'
+      type="text"
+      placeholder='+ New Task'
       required
       value= {newItem}
       onChange={(e) => setNewItem(e.target.value)}

@@ -1,3 +1,7 @@
+@font-face {
+  font-family: 'Geliat-ExtraBold';
+  src: url(./../font/Geliat-ExtraBold.otf) format('otf');
+}
 * {
   margin: 0;
   padding: 0;
@@ -10,11 +14,10 @@ html {
 
 body {
   min-height: 100vh;
-  font-family: 'Roboto', 'Oxygen',
-    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
-    sans-serif;
+  font-family: 'Geliat-ExtraBold', sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+  background: #DFE0E6;
 }
 
 .App {
@@ -22,21 +25,28 @@ body {
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  height: 100vh; 
+  height: 98vh; 
   width: 100%; 
   max-width: 500px;
-  border: 1px solid mediumblue;
+  background: #F9F9F9;
+  border-radius: 1.5rem;
   margin: auto;
 }
 
 header {
   width: 100%;
-  padding: 0 0.25em;
-  background-color: mediumblue;
-  color: aliceblue;
+  color: #020202;
+}
+header .h3 {
+  white-space: nowrap;
+}
+header .display-6 {
+  font-size: 20px;
+  color: #979797;
+}
+.heading {
   display: flex;
-  justify-content: space-between;
-  align-items: center;
+  flex-basis: 1;
 }
 
 main {
@@ -52,10 +62,10 @@ main {
 footer {
   width: 100%;
   padding: 0.25em;
-  background-color: mediumblue;
-  color: aliceblue;
+  color:#020202;;
   display: grid;
   place-content: center;
+  text-align: center;
 }
 
 ul {
@@ -119,39 +129,47 @@ ul li::before {
 
 
 .addForm {
-  width: 100%;
   display: flex;
-  justify-content: flex-start;
-  margin: 0.5rem 0 0;
-  padding: 0 0.5rem 0.25rem;
-  border-bottom: 1px solid #eee;
+  width: 150px;
+  border: none;
+  margin-left: 0px;
 }
 
 .addForm label {
-  position: absolute;
-  left: -99999px;
+  display: none;
 }
 
 .addForm input[type='text'] {
-  flex-grow: 1;
-  max-width: calc(100% - 50px);
-  min-height: 48px;
   font-size: 1rem;
-  padding: 0.25rem;
-  border-radius: 0.25rem;
-  margin-right: 0.25rem;
+  padding: 10px;
+  width: 100%;
+  background: #E2EBFA;
+  border-radius: 1rem;
+  border: none;
   outline: none;
+  transition: outline 0.1s ease;
+}
+
+.addForm input::placeholder {
+  color: #0760FB;
+}
+.addForm input:focus {
+  outline: 2px solid #0760FB;
+}
+.addForm input:focus::placeholder {
+  color: #626F86;
 }
 
 button {
-  height: 48px;
+  display: none;
+  /* height: 48px;
   min-width: 48px;
   border-radius: 0.25rem;
   padding: 0.5rem;
   font-size: 1rem;
   background-color: aliceblue;
   color: mediumblue;
-  cursor: pointer;
+  cursor: pointer; */
 }
 
 button:focus, 
@@ -183,4 +201,14 @@ button:hover {
   padding: 0.25rem;
   border-radius: 0.25rem;
   outline: none;
+}
+
+@media screen and (max-width: 520px) {
+  .App {
+    border-radius: 0;
+    max-width: 400px;
+  }
+  .addForm {
+    margin-top: -30px;
+  }
 }
